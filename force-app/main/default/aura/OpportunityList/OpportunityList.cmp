@@ -1,0 +1,24 @@
+<aura:component controller="OpportunityListController" >
+	
+    <aura:attribute name="OpportunityList" type="Opportunity[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <div class="slds-p-around_medium">
+    <div class="  slds-grid slds-wrap ">
+        
+        <aura:iteration items="{!v.OpportunityList}" var ="opp">
+        <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+            <lightning:card title="{!opp.Name}" footer="{!opp.Amount}" iconName="standard:opportunity">
+            <aura:set attribute="actions">
+                <lightning:button label="View Details" variant="destructive"/>
+                </aura:set>
+                <p>
+                    {!opp.StageName} <br/>
+                   
+                </p>
+            </lightning:card>
+            </div>
+        </aura:iteration>
+        </div>
+    </div>
+</aura:component>

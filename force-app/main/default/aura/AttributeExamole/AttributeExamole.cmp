@@ -1,0 +1,18 @@
+<aura:component >
+	 
+    <aura:attribute name="Whom" type="String" default="Dinesh Baddawar" access="public"/>
+    <aura:attribute name="Age" type="Integer" default="23"/>
+    <aura:attribute name="Color" type="String[]" default="['red','black','pink']" access="private"/>
+    <aura:attribute name="ColorList" type="List" default="['green','yellow','white']"/>
+    <aura:attribute name="ColorSet" type="Set" default="['violet','light-blue','dry-white']"/>
+    <aura:attribute name="ContactObj" type="Contact" access="public"/>
+    
+    <div class="slds-var-p-around_medium">
+    <lightning:input aura:id="testInput" label="Enter Number"/>
+    <b>Welcome, Name {!v.Whom}, Age {!v.Age}, Colors: {!v.Color[0]}</b> <br/>
+    <b>ColorSet is {!v.ColorList[1]}, {} </b> <br/>
+    <div >
+        <lightning:button value="Component Method" label="Component Method" onclick="{!c.doClick}"/>
+    </div >
+    </div>
+</aura:component>

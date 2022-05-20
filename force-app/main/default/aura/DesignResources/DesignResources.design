@@ -1,0 +1,11 @@
+<design:component>
+	 <design:attribute name="heading" label="Enter the name of the Tutorial"></design:attribute>
+    <design:attribute name="topic" label="Enter the Topic"></design:attribute>
+    <design:supportedFormFactors>
+  <!--   <design:supportedFormFactor type="small"></design:supportedFormFactor>   -->
+         <design:supportedFormFactor type="large"></design:supportedFormFactor>
+    </design:supportedFormFactors>
+    <sfdc:objects>
+     <sfdc:object>Contact</sfdc:object>
+    </sfdc:objects>
+</design:component>

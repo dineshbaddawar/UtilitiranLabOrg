@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="Conditional Rerendering" icon-name="custom:custom2">
+        <div class="slds-m-around_medium" style="background-color: darkcyan;">
+            <lightning-input type="checkbox" label="Show Contacts" onchange={handleChange}></lightning-input>
+
+            <template if:false={data1}>
+                <div class="slds-m-vertical_medium" style="background-color: khaki;">
+                   
+                    <b>Account Record List</b> <br/>
+              <template if:true={accounts.data}>
+                  <template for:each={accounts.data} for:item="acc">
+                      <p key={acc.Id}> Account Name: {acc.Name}</p>
+                  </template>
+              </template>
+                </div>
+            </template>
+
+            <template if:true={data1}>
+                <div class="slds-m-vertical_medium" style="background-color: salmon;">
+                  <b>Contact Record List</b> <br/>
+                    <template if:true={contacts.data}>
+                        <template for:each={contacts.data} for:item="con">
+                            <p key={con.Id}>Contact Name: {con.LastName} {con.FirstName}</p>
+                        </template>
+                    </template>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

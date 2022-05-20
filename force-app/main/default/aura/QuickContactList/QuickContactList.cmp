@@ -1,0 +1,19 @@
+<aura:component controller="AuraController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="createCon" type="contact" default="{
+                                                             sobjectName: 'Contact',
+                                                             FirstName: '',
+                                                             LastName: ''}"/>
+    
+    <lightning:card title="Create New Record" iconName="action:new_note">
+        <aura:set attribute="actions">
+            <lightning:button label="Create New Contact/Oppportunity" onclick="{!c.toggleIncomeForm}"></lightning:button>
+        </aura:set> 
+        <p class="slds-p-horizontal_small">
+            <div aura:id="createContact" class="hide">
+                <lightning:input type="text" label="Enter FirstName" value="{!v.createCon.FirstName}"/>
+                <lightning:input text="text" label="Enter LastName" value="{!v.createCon.LastName}" required="true"/> <br/>
+                <lightning:button label="Create Contact" variant="brand" onclick="{!c.doSave}"/>
+            </div>
+        </p>
+    </lightning:card>
+</aura:component>

@@ -1,0 +1,7 @@
+<aura:component >
+    <aura:attribute name="name" type="String"/>
+    <aura:registerEvent name="one" type="c:FirstEvent"/>
+    <aura:handler name="one" event="c:FirstEvent" action="{!c.show}"/>
+    <lightning:button label="Submit" onclick="{!c.invoke}"/> <br/>
+     <b>Name : {!v.name}</b>
+</aura:component>

@@ -1,0 +1,65 @@
+<apex:page standardController="Account" extensions="OpenWeatherMap">
+    
+    <style>
+    table {
+  font-family: normal;
+  border-collapse: collapse;
+  width: 50%;
+  margin-left:100px;  
+  bottom-margin:-100px;      
+  background-color:MediumSeaGreen;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color:DodgerBlue;
+}
+    </style>
+    <div>
+        <table>
+          <Strong>{!city}: Weather</Strong>  
+        <tr>
+        <th>Temprature</th>
+            <th>Pressure</th>
+            <th>Humidity</th>
+        </tr>
+        
+        <tr>
+        <td>{!temp}</td>
+            <td>{!pressure}</td>
+            <td>{!humidity}</td>
+        </tr>
+   
+        <tr>
+            <th>Minimum Temperature</th>
+            <th>Maximim Temprature</th>
+            <th>Visibility</th>
+        </tr>
+        
+        <tr>
+        <td>{!temp_min}</td>
+            <td>{!temp_max}</td>
+            <td>{!visibility}</td>
+        </tr>
+    </table>
+    
+    </div>
+    
+    <!--
+    <apex:pageBlock title="{!city}: Weather">
+        <apex:pageBlockSection >
+            
+            <apex:outputText label="Temprature" value="{!temp}"/>
+            <apex:outputText label="Pressure" value="{!pressure}"/>
+            <apex:outputText label="Humidity"  value="{!humidity}"/>
+            <apex:outputText label="Minimum Temperature" value="{!temp_min}"/>
+            <apex:outputText label="Maximim Temprature" value="{!temp_max}"/>
+            <apex:outputText label="Visibility" value="{!visibility}"/>
+        </apex:pageBlockSection>
+    </apex:pageBlock>   -->
+</apex:page>

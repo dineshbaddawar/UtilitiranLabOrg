@@ -1,0 +1,16 @@
+<template>
+    <div class="slds-m-around_medium">
+    <lightning-card title="Parent Card" icon-name="custom:custom4">
+        <!--Changing child value from Parent Component-->
+        <div class="slds-m-around_medium">
+        <c-child-component></c-child-component>
+    </div>
+    <div class="slds-m-around_medium">
+        <lightning-button label="Click here" variant="brand" onclick={handleClick}></lightning-button>
+    </div>
+    <div class="slds-m-around_medium">
+        <lightning-button label="Submit" variant="brand" onclick={hanldeChange1}></lightning-button>
+    </div>
+    </lightning-card>
+</div>
+</template>

@@ -1,0 +1,24 @@
+<aura:component controller="ContactList">
+
+<aura:attribute name="ContactList" type="Contact[]"/>
+<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+<div class="slds-var-p-around_small">
+    <div class="slds-grid slds-wrap">
+        <aura:iteration items="{!v.ContactList}" var="con">
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning:card title="{!con.LastName}" footer="{!con.Email}" iconName="standard:contact">
+                    <aura:set attribute="actions">
+                        <lightning:button name="{!con.Id}" label="View Details" variant="success">
+                            <p class="slds-p-horizontal_small">
+                                {!con.FirstName} <br/>
+                                {!con.phone}
+                            </p>
+                        </lightning:button>
+                    </aura:set>
+                </lightning:card>
+            </div>
+        </aura:iteration>
+    </div>
+</div>
+</aura:component>

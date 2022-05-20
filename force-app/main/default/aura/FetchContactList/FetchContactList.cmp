@@ -1,0 +1,18 @@
+<aura:component controller="AuraController" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:hasSobjectName" access="global">
+    <aura:attribute name="ContactList" type="Contact[]"/> <!-- List of Contact we storing in this List-->
+    <aura:attribute name="Columns" type="List"/>
+    <aura:handler event="c:SearchEvent" action="{!c.searchKeyChange}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>  <!-- When we call server-side/client-side controller method 
+                                                                           at that time we intialize & we use that -->
+    <lightning:card iconName="standard:work_capacity_usage" title="Related Contacts">
+    <aura:if isTrue="{!not(empty(v.ContactList))}">
+        <lightning:datatable data="{!v.ContactList}"
+                             columns="{!v.columns}"
+                             keyField="Id"
+                             hidenCheckboxColumn="true"/>
+        <aura:set attribute="else">
+        <div style="text_align : center"><b> There are no Related Contacts</b></div>
+        </aura:set>
+        </aura:if>
+    </lightning:card>
+</aura:component>

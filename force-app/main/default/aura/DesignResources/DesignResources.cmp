@@ -1,0 +1,11 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId">
+	
+    <aura:attribute name="heading" type="String" default="Salesforce"></aura:attribute>
+    <aura:attribute name="topic" type="string" default="Design Resources"></aura:attribute>
+    
+    <div>
+    <h1>Welcome to {!v.heading} Tutorial</h1>
+    </div>
+
+    <p>Topic: {!v.topic}</p>
+</aura:component>

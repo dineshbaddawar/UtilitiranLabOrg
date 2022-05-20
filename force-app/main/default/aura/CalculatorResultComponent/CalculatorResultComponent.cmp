@@ -1,0 +1,13 @@
+<aura:component >
+    <aura:attribute name="title" type="string" default="Calculator Result"/>
+    <aura:attribute name="result" type="integer"/>
+    <aura:handler event="c:CalculatorApplicationEvent" action="{!c.getResult}"/>
+    
+    <lightning:card title="Component 2">
+     <!-- <aura:set attribute="title">
+          <lightning:icon iconName="utility:connected_appps" size="small"/>
+          {!v.title}
+        </aura:set> --> <br/>
+        <lightning:input type="number" label="Result" value="{!v.result}"/>
+    </lightning:card>
+</aura:component>

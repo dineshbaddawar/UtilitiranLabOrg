@@ -1,0 +1,17 @@
+<template>
+
+    <div class="slds-box outerDesign">
+        <h1>Account Records Table</h1>
+        <lightning-button label="Show Less" title="Non-primary action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+        <lightning-button label="Show More" title="Non-primary action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+    </div> 
+
+    <div class="slds-box outerDesign">
+        <template if:true={accList}>
+            <lightning-datatable data={accList} columns={columns} key-field="id"></lightning-datatable>
+        </template>
+        <template if:true={error}>
+            {error}
+        </template>
+    </div>
+</template>

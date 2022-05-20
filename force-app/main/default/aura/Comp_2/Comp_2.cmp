@@ -1,0 +1,8 @@
+<aura:component >  <!--Child 2-->
+    <aura:attribute name="value1" type="String"/>    
+    <aura:handler name="one" event="c:SecondEvent" action="{!c.invoke}"/> <!--Comp 2 is Handling the Event-->
+    <h3><b>Component 2--> Child</b>
+    <br/>
+    Name : {!v.value1}
+   </h3>
+</aura:component>

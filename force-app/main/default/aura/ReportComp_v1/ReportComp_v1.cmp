@@ -1,0 +1,12 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="AccountReport">
+	    <aura:attribute name="reportAPI" type="String" />
+    	<aura:attribute name="reportData" type="Integer" />
+    	<aura:handler name="init" value="{!this}" action="{!c.doInit}" /> 
+    <lightning:card title="Contact Record Count" iconName="standard:contact">
+        <div class="slds-m-around_medium">
+          <b>The Count of Record is :	{!v.reportData}</b>
+        </div> 
+  
+    </lightning:card>
+	   
+</aura:component>

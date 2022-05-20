@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Track Decorator">
+        <div>
+            <lightning-input name="firstName" label="First Name" onchange={handleChange}></lightning-input>
+            <lightning-input name="lastName" label="Last Name" onchange={handleChange}></lightning-input>
+            <p class="margin-top-medium">
+                uppercased Full Name: <b>{uppercasedFullName}</b>
+            </p>
+        </div>
+        <p>use Js expression in a example in a template that leverages the @track <br/>
+            Decorator on an object. Type something in the input fields to see the recipe in action
+        </p>
+    </lightning-card>
+</template>

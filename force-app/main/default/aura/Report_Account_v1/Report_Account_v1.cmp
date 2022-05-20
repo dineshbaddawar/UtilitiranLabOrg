@@ -1,0 +1,6 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="AccountReport">
+	    <aura:attribute name="reportAPI" type="String" />
+    <aura:attribute name="reportData" type="Integer" />  
+    	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />    
+		<i>The Count is : {!v.reportData}</i>
+</aura:component>

@@ -1,0 +1,21 @@
+<aura:component >
+    <aura:registerEvent name="appEvent" type="c:CalculatorApplicationEvent"/>
+    <aura:attribute name="firstNumber" type="integer"/>
+    <aura:attribute name="secondNumber" type="integer"/>
+	<lightning:card title="Component 1">
+        <div class="slds-p-around_small">
+       <aura:set attribute="title"> 
+           <lightning:icon iconName="utility:connected_apps" size="small"/>
+           {!v.title}
+        </aura:set>
+            
+             <lightning:input type="number" label="First No"  value="{!v.firstNumber}"/>
+            <lightning:input type="number" label="Second No" value="{!v.secondNumber}"/> <br/>
+        
+            <!--   <aura:set attribute="title"> -->
+            <lightning:button variant="brand" label="Calculate" title="Calculate" onclick="{!c.handleClick}"/>
+      <!--  </aura:set>  -->
+
+       </div>
+    </lightning:card>
+</aura:component>

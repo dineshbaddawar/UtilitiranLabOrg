@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="Conditional Rerendering">
+    <lightning-input type="checkbox"
+                     label="Show Accounts"
+                     onchange={handlechange}>
+                    </lightning-input>
+
+                    <div class="details">
+                        <template if:true={areDetailsVisible}>
+                            <b>Account List: </b>
+                            <div style="height:500px;">
+                                <template if:true={accountList}>
+                                    <lightning-datatable key-field="id"
+                                                         data={accountList}
+                                                         columns={columns}></lightning-datatable>
+                                </template>
+                            </div>
+                        </template>
+
+                        <template if:false={areDetailsVisible}>
+                            <b>Contact List:</b>
+                           <div style="height:400px;">
+                               <template if:true={contactList}>
+                                   <lightning-datatable key-field="id"
+                                                        data={contactList}
+                                                        columns={columns1}></lightning-datatable>
+                               </template>
+                           </div>
+                        </template>
+                    </div>
+      
+    </lightning-card>
+    
+</template>

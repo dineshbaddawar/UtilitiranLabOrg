@@ -1,0 +1,55 @@
+<apex:page readOnly="true"
+           standardController="Account"   
+           applyHtmlTag="false"    
+           sidebar="false"    
+           showHeader="false"    
+           cache="true"    
+           renderAs="advanced_pdf"
+           docType="html-5.0">
+    <head>    
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />    
+        <style type="text/css">
+            @page {
+            size: A4 landscape;    
+            border: 1px solid black;    
+            padding-left: 5px;    
+            padding-right: 5px;      
+            }
+            th {  
+            font-weight: bold;
+            text-align: center;
+            background-color: #92d5f0;
+            color: black;
+            padding: 8px;
+            }
+            td {    
+            font-size: 15px;
+            text-align: left;
+            padding: 8px;
+            }
+            table{
+            border-collapse: collapse;
+            }
+            table, th, td {
+            border: 1px solid black;
+            }
+        </style>    
+    </head>    
+    <center>    
+        <h3>{!Account.Name}</h3>    
+    </center>    
+    <table width="100%">    
+        <tr>
+            <th>Name</th>    
+            <th>Phone</th>
+            <th>Email</th> 
+        </tr>    
+        <apex:repeat value="{!Account.Contacts}" var="con">    
+            <tr>                
+                <td>{!con.Name}</td>    
+                <td>{!con.Phone}</td>
+                <td>{!con.Email}</td>    
+            </tr>    
+        </apex:repeat>    
+    </table>    
+</apex:page>

@@ -1,0 +1,9 @@
+<apex:page controller="ExportAsCSV" action="{!exportToCSV}" cache="true" contentType="application/vnd.ms-excel#export.csv" language="en-US">
+    {!fieldNames}{!newLine}
+    <apex:repeat value="{!objLst}" var="object">
+        <apex:repeat value="{!flds}" var="field">
+            {!object[field]}{!coma}
+        </apex:repeat>
+        {!newLine}
+    </apex:repeat>
+</apex:page>

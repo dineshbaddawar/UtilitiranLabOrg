@@ -1,0 +1,10 @@
+<aura:component >
+	
+    <aura:attribute name="CreateContact" type="Contact"/>
+    <div class=" slds-var-p-around_x-small">
+        <lightning:input type="text" value="{!v.CreateContact.FirstName}" label="FirstName"/>
+        <lightning:input type="text" value="{!v.CreateContact.LastName}" label="LastName"/>
+        
+        <lightning:button label="Create Contact" variant="brand"/>
+    </div>
+</aura:component>

@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Hello Expression">
+        <div>
+            <lightning-input name="firstName" label="First Name" onchange={handleChange}></lightning-input>
+            <lightning-input name="lastName" label="Last Name" onchange={handleChange}></lightning-input>
+            <p class="margin-top-medium">
+              <b>  Uppercased Full Name: {uppercasedFullName} </b>
+            </p>
+        </div>
+       <b>Use JavaScript expression in a template . Type something
+           in the input fields to see the recipe in action.
+       </b>
+    </lightning-card>
+</template>

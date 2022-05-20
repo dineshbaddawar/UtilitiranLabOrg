@@ -1,0 +1,55 @@
+<apex:page controller="SobjectList_1">
+    <!-- Javascript -->
+    <script type="text/javascript">
+    function callFetchFields()
+    {
+        Fetch();
+    }
+    </script>
+    <!-- Javascript -->
+    
+    <!-- CSS -->
+    <style type="text/css">
+        td
+        {
+        text-align:center;
+        }
+    </style>
+    <!-- CSS -->
+    
+    <apex:form >
+        
+        <apex:actionFunction name="Fetch" action="{!fetchFields}" reRender="entire"/>
+        <apex:pageblock id="entire">
+            <table cellspacing="15" cellpadding="10">
+                <tr>
+                    <td><apex:outputLabel value="Select Object"/></td>
+                    <td colspan="2">
+                        <apex:selectList size="1" value="{!obj}" onChange="callFetchFields();">
+                            <apex:selectOptions value="{!objList}"/>
+                        </apex:selectList>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <apex:selectList size="6" multiselect="true" value="{!selFieldNames}" >
+                            <apex:selectOptions value="{!soFieldNames}"/>
+                        </apex:selectList>
+                    </td>
+                    <td>
+                        <br/><apex:commandButton value=">>" action="{!addFields}" reRender="entire"/><br/><br/><br/>
+                        <apex:commandButton value="<<" action="{!removeFields}" reRender="entire"/>
+                    </td>
+                    <td>
+                        <apex:selectList size="6" multiselect="true" value="{!selAvaFieldNames}" >
+                            <apex:selectOptions value="{!soAvailablefieldNames}"/>
+                        </apex:selectList>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3"><apex:commandButton value="Export" action="{!exportFun}"/></td>
+                </tr>
+            </table>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

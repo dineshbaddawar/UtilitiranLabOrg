@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="Track Decorator Types of Input Field" icon-name="custom:custom4">
+        <div class="slds-m-around_medium">
+        <lightning-input name="firstname" label="First Name" placeholder="Enter FirstName.." onchange={handleChange}></lightning-input>
+        <lightning-input name="lastname" label="Last Name" placeholder="Enter LastName.." onchange={handleChange}></lightning-input>
+        <lightning-input type="date" name="date" label="Enter a date" placeholder="Enter any Date.." onchange={handleChange} ></lightning-input>
+        <lightning-input type="datetime" name="datetime" label="Enter a date/time value" placeholder="Enter any Date/Time.." onchange={handleChange} ></lightning-input>
+        <lightning-input type="color" name="color" label="Favorite color" placeholder="Please choose color" onchange={handleChange}></lightning-input>
+        <lightning-input type="file" label="Attachments" placeholder="Please upload a file" onchange={handleChange}></lightning-input>
+        <lightning-input type="password" label="Enter your password" name="password" placeholder="Enter a password" onchange={handleChange}  ></lightning-input>
+    </div>
+    </lightning-card>
+
+    <lightning-card title="Updated Changed Value">
+        <div class="slds-m-around_medium">
+            <h1>Updated FirstName:  <b>{fullname.firstname}</b>
+            <br/>
+            Updated LastName: <b>{fullname.lastname}</b>
+            <br/>
+            Updated Date: <b>{fullname.date}</b>
+            <br/>
+            Update Date/Time: <b>{fullname.datetime}</b>
+            <br/>
+            Updated Color: <b>{fullname.color}</b>
+            <br/>
+            New File: <b>{fullname.file}</b>
+            <br/>
+            Updated Password: <b>{fullname.password}</b>
+        </h1>
+        </div>
+    </lightning-card>
+</template>
