@@ -17,5 +17,6 @@ public with sharing class BatchApexExample implements Database.Batchable <SOBJEC
 
     Public void finish(Database.BatchableContext bc){
 
+        System.debug('Batch Run Successfully');
     }
     }
