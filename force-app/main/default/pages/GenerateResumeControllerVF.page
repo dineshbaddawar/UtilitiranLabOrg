@@ -1,0 +1,38 @@
+<apex:page showHeader="false" sidebar="false" docType="html-5.0" renderAs="pdf"  controller="GenerateResumeController">
+    
+    <table>
+    <td>
+        <!---->
+<span style="float: left;"><p style="font-size:12px; margin-left:155px;margin-bottom:10px;">THIS RESUME is provided by Ondonte Dental Staffing to our Clients for the sole purpose of considering this individual
+                    for hire through Ondonte as a Permanent employee or for the a Temporary assignment. This Resume is <b>CONFIDENTAL</b>
+                    between the Client. Ondonte Dental Staffing and the individual, and it may not be otherwise distributed or used for any 
+                    other purpose. For information, please call Ondonte at 925-218-0649 or email us at sue@ondonte.com</p></span>
+        
+ <apex:image url="{!$Resource.hirect}" style="margin-top:-75px; margin-bottom:0px; width:70px; height:60px" />
+        
+         <hr style="height:2px;border-width:0;color:gray;background-color:blue;margin-bottom:22px;margin-top:-10px;"/>
+</td>
+     </table>
+    
+    <table width="100%" style="margin-top:-5%;font-weight: 100;margin-bottom:0;margin-top:0px;">    
+        <tr>
+            <th style="">
+                <h2 style="text-align:center;margin-top:0%;border-width:0;font-size: 15px;height:6px;color:black;"><b style="text-transform: uppercase;"><b>Contact Name: </b> {!contactDetails.FirstName} {!contactDetails.LastName}</b></h2>   
+            </th>
+        </tr>
+    </table>  <br/>    
+    <hr style="height:2px;border-width:0;margin-left:55px;margin-right:55px;color:gray;background-color:gray;margin-bottom:0;margin-top:0px;"/>
+    
+    <table width="100%" style="margin-top:5px; white-space: nowrap;overflow: hidden;text-overflow: clip;">
+        <tr>
+            <th>
+                <p style="text-align:center;font-size:15px; font-weight:normal;margin-bottom:0;margin-top:0px;"> The Street Address: {!contactDetails.MailingStreet} {!contactDetails.MailingCity} <br/>    
+                </p>
+                <p style="text-align:center;font-size:15px; font-weight:normal;margin-bottom:0;margin-top:0px;">
+                  The Mailling Address:   {!contactDetails.MailingState} {!contactDetails.MailingPostalCode} {!contactDetails.MailingCountry}
+                </p>
+            </th>
+        </tr> 
+    </table>
+
+</apex:page>

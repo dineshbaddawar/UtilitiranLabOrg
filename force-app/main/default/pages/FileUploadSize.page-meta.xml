@@ -3,7 +3,12 @@
     <apiVersion>54.0</apiVersion>
     <availableInTouch>false</availableInTouch>
     <confirmationTokenRequired>false</confirmationTokenRequired>
-    <label>AngularCreateAccountContactVF</label>
+    <label>FileUploadSize</label>
+    <packageVersions>
+        <majorNumber>8</majorNumber>
+        <minorNumber>3412</minorNumber>
+        <namespace>bofc</namespace>
+    </packageVersions>
     <packageVersions>
         <majorNumber>1</majorNumber>
         <minorNumber>7</minorNumber>

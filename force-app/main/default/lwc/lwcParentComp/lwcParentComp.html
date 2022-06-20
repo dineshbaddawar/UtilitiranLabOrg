@@ -1,0 +1,13 @@
+<template>
+     <lightning-card title="Parent to Child Communication Using Public Method">
+          <lightning-layout>
+               <lightning-layout-item flexibility="auto" padding="around-small">
+                    <lightning-input label="Input from Parent Enter the Message" onchange={handleChangeEvent}></lightning-input>
+               </lightning-layout-item>
+               <lightning-layout-item flexibility="auto" padding="around-small">
+                    <c-lwc-Child-Comp></c-lwc-Child-Comp>
+               </lightning-layout-item>
+          </lightning-layout>
+     </lightning-card> <br/>
+
+</template>

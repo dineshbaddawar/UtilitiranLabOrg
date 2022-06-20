@@ -1,15 +1,17 @@
-import { LightningElement, api } from 'lwc';
-export default class FileUploadExample extends LightningElement {
-    @api
-    myRecordId;
+import { LightningElement,api } from 'lwc';
 
-    get acceptedFormats() {
-        return ['.pdf', '.png'];
+export default class FileUploadExample extends LightningElement {
+
+    @api myRecordId;
+
+    get acceptedFormat(){
+        return ['.pdf', '.doc'];
     }
 
-    handleUploadFinished(event) {
-        // Get the list of uploaded files
+    handleUploadFinished(event){
+
+        // get the list of uploaded Files
         const uploadedFiles = event.detail.files;
-        alert('No. of files uploaded : ' + uploadedFiles.length);
+        window.alert('No of Files uploaded : '+uploadedFiles.length);
     }
 }
