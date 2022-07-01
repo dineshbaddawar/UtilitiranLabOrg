@@ -38,5 +38,141 @@ public with sharing class EventSInLWC {
         > JavaScript using addEventListener method : We can explicitly attach a listener by using the addEventListner method in the parent component like below : 
           ChildComponent this.template.addEventListener('eventName', this.handleNotification.bind(this));
 
+      #  Method 1:  Declarative via html markup-- Example: cusotomCompChild & CustomCompParent.
+
+        1.customCompChild.html
+
+        <template>
+     <lightning-card title="Child Component">
+         <div class="slds-m-around_medium">
+             <lightning-input name="textVal" label="Enter Text" onchange={handleChange}></lightning-input>
+         </div>
+     </lightning-card>
+ </template>
+
+       2.customCompChild.js
+
+       import { LightningElement } from 'lwc';
+export default class CustomCompChild extends LightningElement {
+     handleChange(event) {
+          event.preventDefault();
+          const name = event.target.value;
+          const selectEvent = new CustomEvent('mycustomevent', {
+              detail: name
+          });
+         this.dispatchEvent(selectEvent);
+      }
+}
+
+
+     3.customCompParent.html
+
+     <template>
+     <lightning-card title="Parent Component">
+          <div class="slds-m-around_medium">
+               Value From Child : {message}  <br/>
+               <c-custom-comp-child onmycustomevent={handleCustomEvent}></c-custom-comp-child>
+              </div>
+     </lightning-card>
+</template>
+
+     4.customCompParent.js
+
+     import { LightningElement,track } from 'lwc';
+export default class CustomCompParent extends LightningElement {
+     @track message;
+     handleCustomEvent(event){
+          const textVal =event.detail;
+          this.message = textVal;
+     }
+}
+
+      5.customCompParent.xml
+
+      <?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__AppPage</target>
+    </targets>
+</LightningComponentBundle>
+
+
+   # Method 2: JavaScript using addEventListener method | Attaching event Listener Programmatically
+
+  1. customCompChild.html
+
+<template>
+     <lightning-card title="Child Component">
+         <div class="slds-m-around_medium">
+             <lightning-input name="textVal" label="Enter Text" onchange={handleChange}></lightning-input>
+         </div>
+     </lightning-card>
+ </template>
+
+   
+    2. customCompChild.js
+
+    import { LightningElement } from 'lwc';
+
+export default class CustomCompChild extends LightningElement {
+     handleChange(event) {
+          event.preventDefault();
+          const name = event.target.value;
+          const selectEvent = new CustomEvent('mycustomevent', {
+              detail: name , bubbles:true
+          });
+         this.dispatchEvent(selectEvent);
+      }
+}
+
+   3. customCompParent.html
+
+   <!--JavaScript using addEventListener method | Attaching event Listener Programmatically -->
+<template>
+     <lightning-card title="Parent Component">
+          <div class="slds-m-around_medium">
+               Value From Child : {message}  <br/>
+               <c-custom-comp-child ></c-custom-comp-child>
+              </div>
+     </lightning-card>
+</template>
+
+    4. customCompParent.js
+
+    import { LightningElement,track } from 'lwc';
+
+export default class CustomCompParent extends LightningElement {
+     @track message;
+
+     constructor(){
+          super();
+          this.template.addEventListener('mycustomevent', this.handleCustomEvent.bind(this));
+     }
+
+     handleCustomEvent(event){
+          const textVal =event.detail;
+          this.message = textVal;
+     }
+}
+
+   
+    5. customCompParent.xml
+
+    <?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__AppPage</target>
+    </targets>
+</LightningComponentBundle>
+
+  
+  3. Publish Subscriber model in Lightning Web Component
+
+  
+
    */
 }
