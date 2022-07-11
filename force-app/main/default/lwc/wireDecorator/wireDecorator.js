@@ -1,45 +1,46 @@
 import { LightningElement,wire,track } from 'lwc';
-import StudentDetails from '@salesforce/apex/wireApexStudent.StudentDetails';
-
-// Method 1
+import StudentRecord from '@salesforce/apex/StudentController.StudentRecord';
+import getSchoolRec from '@salesforce/apex/StudentController.getSchoolRec';
 const columns = [
-    {label:"Name",fieldName:"Name"},
-    {label:"Id",fieldName:"Id"},
-];
+     {label: 'Name',fieldName: 'Name'},
+     {label: 'RecordId', fieldName: 'Id'},
+     {label: 'Phone', fieldName: 'Phone__c'},
+] 
+
+const getColumns = [
+     {label: "Name", fieldName: "Name"},
+     {label: "Email", fieldName: "Email__c"},
+     {label: "Record Id", fieldName: "Id"},
+]
+
+
 
 export default class WireDecorator extends LightningElement {
 
-   @track columns = columns;
-   @track data = [];
+ @track columns = columns;
+ @track data1 = [];
 
-   @wire(StudentDetails)
-   wireFunction({data,error}){
-       if(data){
-           this.data = data;
-       }
-       else if(error){
-           console.log('Error');
-       }
-   }
-    
+ @wire(StudentRecord)
+ wiredFunction({data, error}){
+     if(data){
+this.data1 = data;
+     }else if(error){
+     console.log('Error Occured');
+     }
+ }
 
+ @track getcolumns = columns;
+ @track getdata = [];
+
+ @wire(getSchoolRec)
+wireScFunction({data, error}){
+     if(data){
+          this.getdata = data;
+     }
+     else if(error){
+          console.log('Error is Occured');
+     }
 }
 
 
-
-
-
-
-
-
-
-
-
-
-    /*
-  // Method 2
-  @track  columns1 = [
-        {label:"Name 1",fieldApiName:"Name 1"},
-    {label:"Id", fieldApiName:"ID"}
-    ] 
-       */
+}

@@ -1,0 +1,30 @@
+<template>
+
+    <lightning-card title="Conditional Rerendering">
+     <div style="height: 200px; width:auto;">
+          <lightning-button 
+          variant="success" 
+          label={onClickButtonLabel} 
+          onclick={handleClick}>
+          </lightning-button> <br/>
+          <lightning-card title="School Records">
+               <lightning-datatable 
+               key-field="id"
+               data={condata}
+               columns={concolumns}>
+          </lightning-datatable>
+          </lightning-card>
+          
+     </div>
+</lightning-card> <br/>
+
+     <template if:true={cardVisible}>
+          <lightning-card title="If:true|false Opportunity Record">
+               <lightning-datatable 
+               key-field="id"
+               data={data}
+               columns={columns}></lightning-datatable>
+            </lightning-card> <br/>
+     </template> 
+
+</template>

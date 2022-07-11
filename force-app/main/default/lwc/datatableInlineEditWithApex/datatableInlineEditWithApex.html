@@ -1,0 +1,22 @@
+<template>
+     <lightning-card
+         title="Datatable Inline Edit With Apex Contact" 
+         icon-name="custom:custom62">
+         <div class="slds-m-around_medium">
+             <template if:true={contacts.data}>
+                 <lightning-datatable
+                     key-field="Id"
+                     data={contacts.data}
+                     columns={columns}
+                     onsave={handleSave}
+                     draft-values={draftValues}
+                     hide-checkbox-column
+                 >
+                 </lightning-datatable>
+             </template>
+             <template if:true={contacts.error}>
+                errors={contacts.error}>
+             </template>
+         </div>
+     </lightning-card>
+ </template>

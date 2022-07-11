@@ -1,0 +1,9 @@
+<template>
+     <lightning-card title="LDSRecordCreated V1" icon-name="standard:record">
+          <div class="slds-m-around_medium">
+               <lightning-input label="Id" disabled value={contactId}></lightning-input>
+               <lightning-input label="Name" onchange={handleNameChange} class="slds-m-bottom_x-small"></lightning-input>
+               <lightning-button label="Create Contact" variant="brand" onclick={createContact}></lightning-button>
+          </div>
+         </lightning-card>
+</template>

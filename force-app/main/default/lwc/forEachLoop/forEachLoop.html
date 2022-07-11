@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="For Each Loop School">
+
+     <template if:true={SchoolData.data}>
+        <template for:each={SchoolData.data} for:item="school">
+          <h3 key={school.Id}> {school.Name},  <b>{school.Id}</b>  </h3>
+        </template>
+     </template>
+
+     <template if:true={SchoolData.error}>
+          {SchoolData.error}
+     </template>
+
+    </lightning-card> <br/>
+
+    <lightning-card title="For Each Loop Account">
+     <template if:true={accRecData.data}>
+          <template for:each={accRecData.data} for:item="acc">
+               <p key={acc.Id}> {acc.Name}, {acc.Id}</p>
+          </template>
+     </template>
+    </lightning-card>
+</template>

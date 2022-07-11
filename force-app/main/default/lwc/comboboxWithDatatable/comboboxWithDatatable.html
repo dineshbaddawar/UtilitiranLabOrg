@@ -1,0 +1,30 @@
+<!--
+@author [Dinesh B]
+@email dinesh.b@utilitarianLab.com
+@create date 2022-06-22 18:31:08
+@modify date 2022-06-22 18:32:04
+@desc [In this we are using lightning-combobox to showing Contact related to Account]
+-->
+
+<template>
+    <lightning-card title="Combobox With Related Datatable">
+     <lightning-combobox label="Available Accounts"
+                          value={value}
+                          placeholder="Select an Account"
+                          options={options}
+                          onchange={handleChangeValue}>
+     </lightning-combobox>
+    </lightning-card>
+
+    <template if:true={cardVisible}>
+    <lightning-card title="Datatable For Contact ">
+      <div style="height: 200px;">
+          <lightning-datatable key-field="id"
+                               data={data}
+                               columns={columns}>
+          </lightning-datatable>
+
+      </div>
+    </lightning-card>
+    </template>
+</template>

@@ -1,0 +1,16 @@
+<template>
+    <!-- <lightning-card title="Clone Contact Record V2" icon-name="standard:contact">
+     <div class="slds-m-around_small">
+               <lightning-input label="FirstName" value={rec.FirstName} onchange={handleFirstNameChange}></lightning-input>
+               <lightning-input label="LastName" value={rec.LastName} onchange={handleLastNameChange}></lightning-input><br/>
+               <lightning-button label="Clone Contact" onclick={handleClick}></lightning-button>
+     </div>
+    </lightning-card>  -->
+
+    <lightning-quick-action-panel header="Clone Contact Record V1">
+     <lightning-input label="FirstName" value={rec.FirstName} onchange={handleFirstNameChange}></lightning-input>
+     <lightning-input label="LastName" value={rec.LastName} onchange={handleLastNameChange}></lightning-input><br/>
+     <lightning-button label="Clone Contact" onclick={handleClick}></lightning-button>
+</lightning-quick-action-panel>
+
+</template>

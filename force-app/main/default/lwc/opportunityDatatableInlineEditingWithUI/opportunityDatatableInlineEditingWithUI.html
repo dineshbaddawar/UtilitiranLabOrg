@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="DataTable InLineEditing Opportunity" icon-name="standard:opportunity">
+     <div class="slds-m-around_medium">
+          <template if:true={opp.data}>
+               <lightning-datatable data={opp.data}
+                                   columns={columns}
+                                   key-field="Id"
+                                   onsave={handleSave}
+                                   draft-values={draftValues}>
+               </lightning-datatable>
+          </template>
+          <template if:true={opp.error}>
+               <P>Something Went Wrong</P>
+          </template>
+     </div>
+    </lightning-card>
+</template>

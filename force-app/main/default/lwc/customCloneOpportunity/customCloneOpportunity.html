@@ -1,0 +1,15 @@
+<template>
+     <!-- Passing All Fields in Record Form -->
+    <lightning-card title="Clone Opp Data">
+     <lightning-layout>
+          <lightning-layout-item size="12">
+               <div class="slds-m-around_medium">
+                    <lightning-record-form record-id={recordId}
+                    object-api-name={objectApiName}
+                    fields={fields}>
+          </lightning-record-form>
+               </div>
+          </lightning-layout-item>
+     </lightning-layout>
+    </lightning-card>
+</template>
