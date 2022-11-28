@@ -23,18 +23,19 @@ export default class ThumbnailImageUpload extends LightningElement {
     content;
     MAX_FILE_SIZE = 1500000;
 
+    debugger;
 
     connectedCallback() {
         this.getRelatedFiles();
     }
-
+    debugger;
     handleFilesChange(event) {
         if (event.target.files.length > 0) {
             this.filesUploaded = event.target.files;
             this.fileName = event.target.files[0].name;
         }
     }
-
+    debugger;
     handleSave() {
         if (this.filesUploaded.length > 0) {
             this.uploadHelper();
@@ -43,7 +44,7 @@ export default class ThumbnailImageUpload extends LightningElement {
             this.fileName = 'Please select file to upload!!';
         }
     }
-
+    debugger;
     uploadHelper() {
         this.file = this.filesUploaded[0];
         if (this.file.size > this.MAX_FILE_SIZE) {
@@ -68,6 +69,7 @@ export default class ThumbnailImageUpload extends LightningElement {
     }
 
     // Calling apex class to insert the file
+    debugger;
     saveToFile() {
         saveFile({ idParent: this.recordId, strFileName: this.file.name, base64Data: encodeURIComponent(this.fileContents) })
             .then(result => {
@@ -104,6 +106,7 @@ export default class ThumbnailImageUpload extends LightningElement {
     }
 
     // Getting releated files of the current record
+    debugger;
     getRelatedFiles() {
         releatedFiles({ idParent: this.recordId })
             .then(data => {
@@ -122,6 +125,7 @@ export default class ThumbnailImageUpload extends LightningElement {
     }
 
     // Getting selected rows to perform any action
+    debugger;
     getSelectedRecords(event) {
         let conDocIds;
         const selectedRows = event.detail.selectedRows;

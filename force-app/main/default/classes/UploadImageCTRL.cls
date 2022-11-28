@@ -13,6 +13,7 @@ public inherited sharing class UploadImageCTRL {
         cv.VersionData = EncodingUtil.base64Decode(base64Data);
         cv.IsMajorVersion = true;
         Insert cv;
+        System.debug('The CV Data :: '+cv);
         return cv;
     }
 
@@ -21,12 +22,14 @@ public inherited sharing class UploadImageCTRL {
         list<id> lstConDocs = new list<id>();
         for(ContentDocumentLink cntLink : [Select Id, ContentDocumentId From ContentDocumentLink Where LinkedEntityId =:idParent]) {
             lstConDocs.add(cntLink.ContentDocumentId);
+            System.debug('the lstConDocs Data ::'+lstConDocs);
         }
         if(!lstConDocs.isEmpty()) {
             ContentDistribution cdl = new ContentDistribution();
             cdl.ContentVersionId = [SELECT Id, Title, ContentDocumentId FROM ContentVersion WHERE ContentDocumentId IN :lstConDocs LIMIT 1].Id;
             cdl.Name = 'PublicShare';
             insert cdl;
+            System.debug('the cdl Data  ::'+cdl);
             Account p = new Account();
             p.id = idParent;
             system.debug(idParent);

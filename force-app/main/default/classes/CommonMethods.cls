@@ -10,6 +10,7 @@ public with sharing class CommonMethods {
             String label = objType.getDescribe().getLabel();
             mapOfAllObject.put(name,label);
         }
+        System.debug('mapOfAllObject ::'+mapOfAllObject);
         return mapOfAllObject;
     }
 }

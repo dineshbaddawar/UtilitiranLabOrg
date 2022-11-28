@@ -30,4 +30,3 @@ export default class NavToNewRecord extends NavigationMixin(LightningElement) {
         });
     }
 }
-
